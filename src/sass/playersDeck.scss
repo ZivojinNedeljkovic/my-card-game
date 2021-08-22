@@ -1,0 +1,41 @@
+.game__players-deck {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  height: $card-height;
+  width: 100%;
+  margin-bottom: 10px;
+
+  .game__players-deck__card-stack {
+    //@extend %card-spot;
+    margin: 0 multiplyCardWidth(0.025);
+    width: $card-width;
+    height: $card-height;
+
+    @for $i from 0 through $max-cards-of-type {
+      .game__players-deck__card-stack__card-spot-#{$i} {
+        width: $card-width;
+        height: $card-height;
+        // border: bisque 1px solid;
+        // border-radius: 10%;
+        position: relative;
+        bottom: multiplyCardWidth($i, $card-stacking-factor);
+        //transform: translate(0, calc(#{$card-height} * -1.15 * #{$i}));
+      }
+    }
+
+    // .players-deck__cards-spot {
+    //   //@extend %card-spot;
+    //   margin: 0 multiplyCardWidth(0.025);
+    //   width: $card-width;
+    //   // height: $card-height;
+    // }
+    // @for $i from 1 through $max-cards-of-type {
+    //   .players-deck__cards-spot__card-#{$i} {
+    //     position: relative;
+    //     bottom: multiplyCardWidth($i, $card-stacking-factor);
+    //     //transform: translate(0, calc(#{$card-height} * -1.15 * #{$i}));
+    //   }
+  }
+}

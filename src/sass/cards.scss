@@ -1,0 +1,89 @@
+.game__card-container {
+  position: fixed;
+  bottom: -10%;
+  left: 50%;
+}
+%card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: $card-width;
+  height: $card-height;
+  border-radius: 10%;
+  box-sizing: border-box;
+  font-size: multiplyCardWidth(0.25);
+  user-select: none;
+  position: absolute;
+}
+.ocean {
+  @extend %card;
+  background-color: #457b9d;
+  //font-size: 2.4rem;
+  color: #a8dadc;
+  border: #a8dadc 2px solid;
+}
+.orange {
+  @extend %card;
+  background-color: #e76f51;
+  //font-size: 2.4rem;
+  color: #f4a261;
+  border: #f4a261 2px solid;
+}
+.vanilla {
+  @extend %card;
+  background-color: #fed9b7;
+  //font-size: 2.4rem;
+  color: #fdfcdc;
+  border: #fdfcdc 2px solid;
+}
+.desire {
+  @extend %card;
+  background: rgb(36, 12, 14);
+  background: linear-gradient(
+    115deg,
+    rgba(36, 12, 14, 1) 0%,
+    rgba(255, 0, 0, 1) 29%,
+    rgba(114, 91, 159, 1) 50%,
+    rgba(0, 105, 164, 1) 65%,
+    rgba(0, 105, 164, 1) 81%,
+    rgba(13, 11, 13, 1) 100%
+  );
+  /* background: linear-gradient(
+      24deg,
+      rgba(13, 11, 13, 1) 0%,
+      rgba(0, 105, 164, 1) 18%,
+      rgba(0, 105, 164, 1) 34%,
+      rgb(114, 91, 159) 51%,
+      rgba(255, 0, 0, 1) 76%,
+      rgba(36, 12, 14, 1) 100%
+    ); */
+  background: linear-gradient(to right, #3a6186, #89253e);
+  color: white;
+  border: 1px solid white;
+}
+.tulip {
+  @extend %card;
+  background-color: #d67ab1;
+  color: #f1e4f3;
+  border: #f1e4f3 2px solid;
+}
+.leaf {
+  @extend %card;
+  background-color: #0b525b;
+  color: #b5e4eb;
+  border: #212f45 2px solid;
+}
+.cloud {
+  @extend %card;
+  background-color: #495867;
+  color: #ecc8af;
+  border: #ecc8af 2px solid;
+}
+.love {
+  @extend %card;
+
+  background: linear-gradient(to right, #3a6186, #89253e);
+  color: white;
+  border: 1px solid white;
+}

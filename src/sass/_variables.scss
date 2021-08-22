@@ -1,0 +1,15 @@
+:root {
+  --cards-per-tray: 1;
+}
+$card-width: min(14.5vw, 8.4vh, 5rem);
+$card-stacking-factor: 1.3;
+@function multiplyCardWidth($factors...) {
+  $factorsProduct: 1;
+  @each $factor in $factors {
+    $factorsProduct: $factorsProduct * $factor;
+  }
+  @return calc(#{$card-width} * #{$factorsProduct});
+}
+
+$card-height: multiplyCardWidth(1.16);
+$max-cards-of-type: 8;
