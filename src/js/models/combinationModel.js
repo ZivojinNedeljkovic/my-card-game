@@ -2,6 +2,7 @@ import { getRandomIntInclusive } from './helpers'
 import { state } from './state'
 import { WINING_COMBINATION_LENGTH, CARDS } from './config'
 
+/*
 function checkWinComb(winComb, playersCards = state.playersCards) {
   for (const [cardType, cardAmountInPlayersDeck] of playersCards) {
     // card is a singleton and it is more then once in win comb, return false
@@ -18,6 +19,24 @@ function checkWinComb(winComb, playersCards = state.playersCards) {
 
   return true
 }
+*/
+
+function checkWinComb(winComb, playersCards = state.playersCards) {
+  // card amounts in win comb and player deck can be equal only once, other wise there must always be more cards of type in players deck
+  let numOfCardsWithEqualAmounts = 0
+  for (const [cardType, cardAmountInPlayersDeck] of playersCards) {
+    const cardAmountInWinComb = winComb.filter(card => card === cardType).length
+
+    if (
+      cardAmountInPlayersDeck === cardAmountInWinComb &&
+      ++numOfCardsWithEqualAmounts > 1
+    ) {
+      return false
+    } else if (cardAmountInPlayersDeck < cardAmountInWinComb) return false
+  }
+
+  return true
+}
 
 export function generateWiningCombination(
   stateObj = state,
@@ -30,7 +49,6 @@ export function generateWiningCombination(
     const card = cards[getRandomIntInclusive(0, cards.length - 1)]
     winComb.push(card)
   }
-
 
   if (!checkWinComb(winComb))
     return generateWiningCombination(stateObj, winCombLen)
