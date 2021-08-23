@@ -2,10 +2,10 @@
   "name": "my-card-game",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --out-dir ./dist"
   },
   "author": "Zivojin Nedeljkovic",
   "license": "ISC",
