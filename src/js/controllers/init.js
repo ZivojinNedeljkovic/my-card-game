@@ -19,6 +19,7 @@ import { returnCardController, submitCombController } from './inputController'
     config.CARDS,
     config.MAX_CARDS_OF_TYPE
   )
+  console.log(state.winningCombination)
 
   GameView.swipeAria.addHandler('up', submitCombController)
   GameView.swipeAria.addHandler('down', returnCardController)

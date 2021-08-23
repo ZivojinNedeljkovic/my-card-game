@@ -54,7 +54,6 @@ export function generateWiningCombination(
     return generateWiningCombination(stateObj, winCombLen)
 
   stateObj.winningCombination = winComb
-  console.log(winComb)
   return winComb
 }
 

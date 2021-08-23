@@ -15,21 +15,26 @@ export class CardView extends View {
   }
 
   move(target, duration) {
-    const cardCords = this.getCoords()
+    let cardCords = this.accomplishedTarget ? this.accomplishedTarget.getCoords() : this.getCoords()
     const targetCords = target.getCoords()
 
+    // console.log(
+    //   `  card cords: ${cardCords.x} ${cardCords.y} \ntarget cords: ${targetCords.x} ${targetCords.y}`
+    // )
     this.translate.x += targetCords.x - cardCords.x
     this.translate.y += targetCords.y - cardCords.y
 
     this._element.style.transition = `transform ${duration}ms`
     this._element.style.transform = `translate(${this.translate.x}px, ${this.translate.y}px)`
 
-    this.target = target
+    this.accomplishedTarget = target
   }
 
   updatePosition() {
-    if (!this.target) return
-    this.move(this.target, 0)
+    if (!this.accomplishedTarget) return
+    const movedTarget = this.accomplishedTarget
+    this.accomplishedTarget = undefined
+    this.move(movedTarget, 0)
   }
 
   addRedToken() {

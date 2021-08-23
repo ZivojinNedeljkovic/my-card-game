@@ -23,7 +23,6 @@ class GameView extends View {
 
   render(playersCards, numOfMoves, cardsPerMove, cards, maxCardsOfType) {
     super.render('main', '#game')
-
     this.cardsPerMove = cardsPerMove
 
     this.table = new TableView(this._element)
@@ -44,7 +43,7 @@ class GameView extends View {
     this.cardContainer.cards.forEach((card, i) => {
       if (animation)
         setTimeout(() => this.playersDeck.pushCard(card, 300), i * 150)
-      else this.playersDeck.pushCard(card, 500)
+      else this.playersDeck.pushCard(card, 0)
     })
   }
 
