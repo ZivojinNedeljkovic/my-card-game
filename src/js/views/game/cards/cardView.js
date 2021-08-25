@@ -15,7 +15,9 @@ export class CardView extends View {
   }
 
   move(target, duration) {
-    let cardCords = this.accomplishedTarget ? this.accomplishedTarget.getCoords() : this.getCoords()
+    let cardCords = this.accomplishedTarget
+      ? this.accomplishedTarget.getCoords()
+      : this.getCoords()
     const targetCords = target.getCoords()
 
     // console.log(
@@ -26,6 +28,10 @@ export class CardView extends View {
 
     this._element.style.transition = `transform ${duration}ms`
     this._element.style.transform = `translate(${this.translate.x}px, ${this.translate.y}px)`
+
+    const { x: xc, y: yc } = this.getCoords()
+    const { x, y } = target.getCoords()
+    if (xc !== x || yc !== y) this.move(target, duration)
 
     this.accomplishedTarget = target
   }
