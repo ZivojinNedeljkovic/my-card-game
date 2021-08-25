@@ -36,9 +36,9 @@ class GameView extends View {
     this.swipeAria.render()
 
     this.#dealCards(false)
-    this.cardContainer.updateCardsPositions()
-    
+
     this.playersDeck.onClickHandler(this.#putCardOnTable.bind(this))
+    setTimeout(() => this.cardContainer.updateCardsPositions(), 1000)
   }
 
   #dealCards(animation = true) {
