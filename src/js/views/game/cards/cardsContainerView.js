@@ -6,7 +6,7 @@ export class CardContainerView extends View {
 
   constructor(parentEl) {
     super(parentEl)
-    window.addEventListener('resize', this.#updateCardsPositions.bind(this))
+    window.addEventListener('resize', this.updateCardsPositions.bind(this))
   }
 
   get cards() {
@@ -29,7 +29,7 @@ export class CardContainerView extends View {
     })
   }
 
-  #updateCardsPositions() {
+  updateCardsPositions() {
     console.log('sss')
 
     this.#cards.forEach(card => card.updatePosition())
