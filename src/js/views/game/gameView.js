@@ -36,6 +36,8 @@ class GameView extends View {
     this.swipeAria.render()
 
     this.#dealCards(false)
+   
+    
     this.playersDeck.onClickHandler(this.#putCardOnTable.bind(this))
   }
 

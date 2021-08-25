@@ -15,7 +15,9 @@ export class CardView extends View {
   }
 
   move(target, duration) {
-    let cardCords = this.getCoords()
+    let cardCords = this.accomplishedTarget
+      ? this.accomplishedTarget.getCoords()
+      : this.getCoords()
     const targetCords = target.getCoords()
 
     // console.log(
