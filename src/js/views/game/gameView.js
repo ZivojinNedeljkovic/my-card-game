@@ -43,7 +43,7 @@ class GameView extends View {
     this.cardContainer.cards.forEach((card, i) => {
       if (animation)
         setTimeout(() => this.playersDeck.pushCard(card, 300), i * 150)
-      else this.playersDeck.pushCard(card, 1)
+      else this.playersDeck.pushCard(card, 500)
     })
   }
 
