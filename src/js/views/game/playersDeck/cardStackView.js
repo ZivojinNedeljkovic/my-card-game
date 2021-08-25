@@ -20,7 +20,6 @@ export class CardStackView extends View {
 
   pushCard(card, animationDuration) {
     const cardSpot = this.cardSpots.find(cardSpot => !cardSpot.card)
-    console.log(cardSpot, card)
     card.move(cardSpot, animationDuration)
     cardSpot.card = card
   }
