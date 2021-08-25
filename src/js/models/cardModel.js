@@ -19,10 +19,10 @@ function checkDealtCards(playersCards = new Map(), maxCardOfType) {
 }
 
 export function dealCards(rules = config, stateObj = state) {
-  const numOfCards = rules.NUMBER_OF_TRAYS * rules.NUMBER_OF_CARDS_PER_TRAY
+  const numOfCards = rules.NUMBER_OF_CARDS
   let numOfCardsDealt = 0
   let playersCards = new Map()
-
+  console.log(numOfCards)
   for (let i = 0; i < rules.CARDS.length - 1; i++) {
     const cardsOfType = getRandomIntInclusive(
       rules.MIN_CARDS_OF_TYPE,
