@@ -35,7 +35,7 @@ class GameView extends View {
     this.playersDeck.render(playersCards, maxCardsOfType)
     this.swipeAria.render()
 
-    this.#dealCards(true)
+    this.#dealCards(false)
     this.playersDeck.onClickHandler(this.#putCardOnTable.bind(this))
   }
 
@@ -43,7 +43,7 @@ class GameView extends View {
     this.cardContainer.cards.forEach((card, i) => {
       if (animation)
         setTimeout(() => this.playersDeck.pushCard(card, 300), i * 150)
-      else this.playersDeck.pushCard(card, 0)
+      else this.playersDeck.pushCard(card, 1)
     })
   }
 
