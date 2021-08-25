@@ -32,7 +32,18 @@ function checkWinComb(winComb, playersCards = state.playersCards) {
       ++numOfCardsWithEqualAmounts > 1
     ) {
       return false
-    } else if (cardAmountInPlayersDeck < cardAmountInWinComb) return false
+    }
+    //else if (
+    //   numOfCardsWithEqualAmounts === 1 &&
+    //   cardAmountInPlayersDeck < cardAmountInWinComb + 1
+    // )
+    //   return false
+    else if (cardAmountInPlayersDeck < cardAmountInWinComb) return false
+    if (
+      cardAmountInPlayersDeck === cardAmountInWinComb &&
+      cardAmountInPlayersDeck === 1
+    )
+      console.log('3333')
   }
 
   return true

@@ -17,7 +17,8 @@
   .game__table__result-card-spot {
     @extend .game__table__card-spot;
     margin-top: multiplyCardWidth(0.2);
-    border-color: rgba(255, 255, 0, 0.698);
+    //border-color: rgba(255, 255, 0, 0.698);
+    border-color: rgba(255, 255, 0, 0);
   }
 }
 
