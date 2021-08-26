@@ -39,7 +39,7 @@ class GameView extends View {
 
     this.playersDeck.onClickHandler(this.#putCardOnTable.bind(this))
     setTimeout(() => this.cardContainer.updateCardsPositions(), 500)
-    this.table.renderReport(2, 1)
+    //this.table.renderReport(2, 1)
   }
 
   #dealCards(animation = true) {
