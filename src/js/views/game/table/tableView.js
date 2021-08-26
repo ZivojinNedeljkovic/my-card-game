@@ -1,9 +1,11 @@
 import { CardSpotView } from './cardSpotView'
 import { ResultSpotView } from './resultSpotView'
 import { View } from '../../view'
+import { ReportView } from './reportView'
 
 export class TableView extends View {
   #cardSpots = []
+  #reportSpots = []
   #resultSpots = []
 
   constructor(parentEl) {
@@ -23,23 +25,42 @@ export class TableView extends View {
   }
 
   render(numOfMoves, cardsPerMove) {
-    // this.#numOfMoves = numOfMoves
-    // this.#cardsPerMove = cardsPerMove
     this.setCSSVariables({
       cardsPerTray: cardsPerMove,
     })
 
     const numOfCards = numOfMoves * cardsPerMove
     super.render('div', '.game__table')
-    this.#renderCardSpots(numOfCards, cardsPerMove)
-    // this._element.addEventListener('click', () => {
-    //   console.log('table clicked')
-    // })
+
+    for (let i = 0; i < numOfCards; i++) {
+      this.#cardSpots.push(new CardSpotView(this._element, i))
+      this.#cardSpots[i].render()
+      if ((i + 1) % cardsPerMove === 0) {
+        console.log(i)
+        const reportSpot = new ReportView(this._element)
+        this.#reportSpots.push(reportSpot)
+        reportSpot.render()
+      }
+    }
+
+    for (let i = 0; i < cardsPerMove; i++) {
+      this.#resultSpots.push(new ResultSpotView(this._element, i))
+      this.#resultSpots[i].render()
+    }
   }
 
   pushCard(card) {
     const freeCardSpot = this.#cardSpots.find(cardSpot => !cardSpot.card)
     freeCardSpot.pushCard(card)
+  }
+
+  renderReport(rightCardsInRightPlace, rightCards) {
+    const reportSpot = this.#reportSpots.find(
+      reportSpot => reportSpot.filled === false
+    )
+    console.log(reportSpot)
+
+    reportSpot.renderReport(rightCardsInRightPlace, rightCards)
   }
 
   popCard() {

@@ -3,7 +3,7 @@
   bottom: -10%;
   left: 50%;
 }
-%card {
+.card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,28 +17,28 @@
   position: absolute;
 }
 .ocean {
-  @extend %card;
+  @extend .card;
   background-color: #457b9d;
   //font-size: 2.4rem;
   color: #a8dadc;
   border: #a8dadc 2px solid;
 }
 .orange {
-  @extend %card;
+  @extend .card;
   background-color: #e76f51;
   //font-size: 2.4rem;
   color: #f4a261;
   border: #f4a261 2px solid;
 }
 .vanilla {
-  @extend %card;
+  @extend .card;
   background-color: #fed9b7;
   //font-size: 2.4rem;
   color: #fdfcdc;
   border: #fdfcdc 2px solid;
 }
 .desire {
-  @extend %card;
+  @extend .card;
   background: rgb(36, 12, 14);
   background: linear-gradient(
     115deg,
@@ -63,25 +63,25 @@
   border: 1px solid white;
 }
 .tulip {
-  @extend %card;
+  @extend .card;
   background-color: #d67ab1;
   color: #f1e4f3;
   border: #f1e4f3 2px solid;
 }
 .leaf {
-  @extend %card;
+  @extend .card;
   background-color: #0b525b;
   color: #b5e4eb;
   border: #212f45 2px solid;
 }
 .cloud {
-  @extend %card;
+  @extend .card;
   background-color: #495867;
   color: #ecc8af;
   border: #ecc8af 2px solid;
 }
 .love {
-  @extend %card;
+  @extend .card;
 
   background: linear-gradient(to right, #3a6186, #89253e);
   color: white;

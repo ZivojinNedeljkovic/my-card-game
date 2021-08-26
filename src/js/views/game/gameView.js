@@ -39,6 +39,7 @@ class GameView extends View {
 
     this.playersDeck.onClickHandler(this.#putCardOnTable.bind(this))
     setTimeout(() => this.cardContainer.updateCardsPositions(), 500)
+    this.table.renderReport(2, 1)
   }
 
   #dealCards(animation = true) {
@@ -58,15 +59,16 @@ class GameView extends View {
   }
 
   renderMoveResult(rightCardsInRightPlaces, rightCards) {
-    this.#currentMove.forEach(card => {
-      if (rightCardsInRightPlaces > 0) {
-        card.addRedToken()
-        rightCardsInRightPlaces--
-      } else if (rightCards > 0) {
-        card.addYellowToken()
-        rightCards--
-      }
-    })
+    this.table.renderReport(rightCardsInRightPlaces, rightCards)
+    // this.#currentMove.forEach(card => {
+    //   if (rightCardsInRightPlaces > 0) {
+    //     card.addRedToken()
+    //     rightCardsInRightPlaces--
+    //   } else if (rightCards > 0) {
+    //     card.addYellowToken()
+    //     rightCards--
+    //   }
+    // })
   }
 
   returnCardToDeck() {

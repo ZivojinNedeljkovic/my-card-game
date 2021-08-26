@@ -1,18 +1,50 @@
 .game__table {
+  $gap-width: multiplyCardWidth(0.125);
   display: grid;
-  grid-template-columns: repeat(var(--cards-per-tray), $card-width);
-  //grid-template-rows: repeat(var(--number-of-trays), $card-height);
-  //gap: min(2%, 1rem) min(2%, 1rem);
-  gap: multiplyCardWidth(0.125) multiplyCardWidth(0.1);
+  grid-template-columns: repeat(calc(var(--cards-per-tray) + 1), $card-width);
+  gap: $gap-width multiplyCardWidth(0.1);
   justify-content: center;
+  margin-left: calc(#{$card-width} + #{$gap-width});
   margin-top: 15px;
- // padding-top: 15px;
-  //position: relative;
   .game__table__card-spot {
     width: $card-width;
     height: $card-height;
     border: rgba(245, 245, 220, 0.52) solid 1px;
     border-radius: 10%;
+  }
+  .game__table__report {
+    width: $card-width;
+    height: $card-height;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5px;
+    // align-items: center;
+  }
+  .token {
+    width: multiplyCardWidth(0.35);
+    height: multiplyCardWidth(0.35);
+    border-radius: 50%;
+    border: 1px solid rgba(37, 36, 36, 0.335);
+    align-self: center;
+  }
+  .game__table__report__red-token {
+    @extend .token;
+    background: #f00000; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #dc281e,
+      #f00000
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #dc281e,
+      #f00000
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  .game__table__report__yellow-token {
+    @extend .token;
+    background: #f1e204; /* fallback for old browsers */
   }
   .game__table__result-card-spot {
     @extend .game__table__card-spot;
@@ -21,7 +53,3 @@
     border-color: rgba(255, 255, 0, 0);
   }
 }
-
-// .table__card-spot--occupied {
-//   border: none;
-// }
