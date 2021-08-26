@@ -36,7 +36,6 @@ export class TableView extends View {
       this.#cardSpots.push(new CardSpotView(this._element, i))
       this.#cardSpots[i].render()
       if ((i + 1) % cardsPerMove === 0) {
-        console.log(i)
         const reportSpot = new ReportView(this._element)
         this.#reportSpots.push(reportSpot)
         reportSpot.render()

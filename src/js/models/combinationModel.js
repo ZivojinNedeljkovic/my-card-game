@@ -38,7 +38,7 @@ function checkWinComb(winComb, playersCards = state.playersCards) {
     //   cardAmountInPlayersDeck < cardAmountInWinComb + 1
     // )
     //   return false
-    else if (cardAmountInPlayersDeck < cardAmountInWinComb) return false
+    else if (cardAmountInPlayersDeck < cardAmountInWinComb + 1) return false
     if (
       cardAmountInPlayersDeck === cardAmountInWinComb &&
       cardAmountInPlayersDeck === 1

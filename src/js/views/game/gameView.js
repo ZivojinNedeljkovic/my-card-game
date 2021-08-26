@@ -28,7 +28,7 @@ class GameView extends View {
     this.table = new TableView(this._element)
     this.playersDeck = new PlayersDeckView(this._element)
     this.cardContainer = new CardContainerView(this._element)
-    this.swipeAria = new SwipeAriaView(this._element, 50, 500, 49)
+    this.swipeAria = new SwipeAriaView(this._element, 50, 500, 45)
 
     this.cardContainer.render(playersCards)
     this.table.render(numOfMoves, cardsPerMove)

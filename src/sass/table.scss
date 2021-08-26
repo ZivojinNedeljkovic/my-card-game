@@ -5,7 +5,7 @@
   gap: $gap-width multiplyCardWidth(0.1);
   justify-content: center;
   margin-left: calc(#{$card-width} + #{$gap-width});
-  margin-top: 15px;
+  padding-top: 15px;
   .game__table__card-spot {
     width: $card-width;
     height: $card-height;
@@ -46,10 +46,11 @@
     @extend .token;
     background: #f1e204; /* fallback for old browsers */
   }
+
   .game__table__result-card-spot {
     @extend .game__table__card-spot;
-    margin-top: multiplyCardWidth(0.2);
-    //border-color: rgba(255, 255, 0, 0.698);
-    border-color: rgba(255, 255, 0, 0);
+    margin-top: multiplyCardWidth(0.1);
+    border-color: rgba(255, 255, 0, 0.548);
+    //border-color: rgba(255, 255, 0, 0);
   }
 }

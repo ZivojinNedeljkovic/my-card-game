@@ -30,7 +30,7 @@ export class CardContainerView extends View {
   }
 
   updateCardsPositions() {
-    console.log('sss')
+
 
     this.#cards.forEach(card => card.updatePosition())
   }
