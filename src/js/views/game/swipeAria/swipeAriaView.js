@@ -1,7 +1,6 @@
-import { View } from '../../view'
 import { Swipe } from './swipe'
 
-export class SwipeAriaView extends View {
+export class SwipeAriaView {
   #swipeHandlers = {}
 
   constructor(
@@ -10,15 +9,15 @@ export class SwipeAriaView extends View {
     swipeMaxDuration,
     allowedOffsetPercentage
   ) {
-    super(parentEl)
+    this.parentEl = parentEl
     this.swipeMinDistance = swipeMinDistance
     this.swipeMaxDuration = swipeMaxDuration
     this.allowedOffsetPercentage = allowedOffsetPercentage
   }
 
   render() {
-    super.render('div', '.game__swipe-aria swipe-aria')
-    this._element.addEventListener(
+    //  super.render('div', '.game__swipe-aria swipe-aria')
+    this.parentEl.addEventListener(
       'touchstart',
       this.#touchStartHandler.bind(this)
     )
@@ -35,7 +34,7 @@ export class SwipeAriaView extends View {
 
     this.touchStartEvent = event
 
-    this._element.addEventListener(
+    this.parentEl.addEventListener(
       'touchend',
       this.#touchEndHandler.bind(this),
       { once: true }
