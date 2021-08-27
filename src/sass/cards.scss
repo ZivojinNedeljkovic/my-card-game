@@ -12,7 +12,7 @@
   height: $card-height;
   border-radius: 10%;
   box-sizing: border-box;
-  font-size: multiplyCardWidth(0.25);
+  font-size: multiplyCardWidth(0.28);
   user-select: none;
   position: absolute;
 }
@@ -34,8 +34,8 @@
   @extend .card;
   background-color: #fed9b7;
   //font-size: 2.4rem;
-  color: #fdfcdc;
-  border: #fdfcdc 2px solid;
+  color: #640a0a81;
+  border: #640a0a49 2px solid;
 }
 .desire {
   @extend .card;

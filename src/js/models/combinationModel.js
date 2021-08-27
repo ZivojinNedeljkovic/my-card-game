@@ -49,7 +49,7 @@ function checkWinComb(winComb, playersCards = state.playersCards) {
   return true
 }
 
-export function generateWiningCombination(
+export function generateWiningCombination_old(
   stateObj = state,
   winCombLen = WINING_COMBINATION_LENGTH,
   cards = CARDS
@@ -63,6 +63,22 @@ export function generateWiningCombination(
 
   if (!checkWinComb(winComb))
     return generateWiningCombination(stateObj, winCombLen)
+
+  stateObj.winningCombination = winComb
+  return winComb
+}
+
+export function generateWiningCombination(
+  stateObj = state,
+  winCombLen = WINING_COMBINATION_LENGTH,
+  cards = CARDS
+) {
+  const winComb = []
+
+  for (let i = 0; i < winCombLen; i++) {
+    const card = cards[getRandomIntInclusive(0, cards.length - 1)]
+    winComb.push(card)
+  }
 
   stateObj.winningCombination = winComb
   return winComb

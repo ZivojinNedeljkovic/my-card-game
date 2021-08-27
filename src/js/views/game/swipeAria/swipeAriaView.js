@@ -28,8 +28,6 @@ export class SwipeAriaView {
   }
 
   #touchStartHandler(event) {
-    console.log('swipe aria touched')
-
     if (event.touches.length > 1) return
 
     this.touchStartEvent = event

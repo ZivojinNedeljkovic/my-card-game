@@ -18,7 +18,7 @@ function checkDealtCards(playersCards = new Map(), maxCardOfType) {
   )
 }
 
-export function dealCards(rules = config, stateObj = state) {
+export function dealCards_old(rules = config, stateObj = state) {
   const numOfCards = rules.NUMBER_OF_CARDS
   let numOfCardsDealt = 0
   let playersCards = new Map()
@@ -38,6 +38,18 @@ export function dealCards(rules = config, stateObj = state) {
 
   if (!checkDealtCards(playersCards, rules.MAX_CARDS_OF_TYPE))
     return dealCards(rules)
+
+  stateObj.playersCards = playersCards
+
+  return playersCards
+}
+
+export function dealCards(cards = config.CARDS, stateObj = state) {
+  let playersCards = new Map()
+
+  cards.forEach(card => {
+    playersCards.set(card, 6)
+  })
 
   stateObj.playersCards = playersCards
 

@@ -23,6 +23,13 @@ class GameView extends View {
 
   render(playersCards, numOfMoves, cardsPerMove, cards, maxCardsOfType) {
     super.render('main', '#game')
+
+    // if (document.documentElement.requestFullscreen) {
+    //   document.documentElement
+    //     .requestFullscreen()
+    //     .catch(err => console.log(err.message))
+    // }
+
     this.cardsPerMove = cardsPerMove
 
     this.table = new TableView(this._element)
