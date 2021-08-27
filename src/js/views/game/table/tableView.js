@@ -57,7 +57,6 @@ export class TableView extends View {
     const reportSpot = this.#reportSpots.find(
       reportSpot => reportSpot.filled === false
     )
-    console.log(reportSpot)
 
     reportSpot.renderReport(rightCardsInRightPlace, rightCards)
   }

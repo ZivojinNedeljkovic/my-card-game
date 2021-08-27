@@ -48,9 +48,10 @@ export function dealCards(cards = config.CARDS, stateObj = state) {
   let playersCards = new Map()
 
   cards.forEach(card => {
-    playersCards.set(card, 6)
+    playersCards.set(card, 5)
   })
 
+  //playersCards.set('love', 1)
   stateObj.playersCards = playersCards
 
   return playersCards
